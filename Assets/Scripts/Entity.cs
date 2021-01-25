@@ -5,7 +5,6 @@ using UnityEngine;
 public class Entity : MonoBehaviour {
 
 	public int health = 20;
-	public GameObject deathEffect;
 
 	public void TakeDamage (int amount)
 	{
@@ -19,9 +18,7 @@ public class Entity : MonoBehaviour {
 
 	public virtual void Die ()
 	{
-		GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
-		effect.transform.localScale = transform.localScale;
-		Destroy(effect, 10f);
+
 		Destroy(gameObject);
 	}
 
