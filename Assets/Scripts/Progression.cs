@@ -144,10 +144,10 @@ public class Progression : MonoBehaviour {
 			enemy.GetComponent<Enemy>().Remove();
 		}
 
-		GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
-		foreach (GameObject bullet in bullets)
+		GameObject[] spells = GameObject.FindGameObjectsWithTag("Spell");
+		foreach (GameObject spell in spells)
 		{
-			bullet.GetComponent<Bullet>().Remove();
+			spell.GetComponent<Spell>().Remove();
 		}
 
 		StartCoroutine(LevelUp());

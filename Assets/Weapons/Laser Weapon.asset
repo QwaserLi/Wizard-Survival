@@ -4,14 +4,16 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d06208f58ac55fc488a79f6951cade8f, type: 3}
   m_Name: Laser Weapon
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  spellPrefab: {fileID: 1937549816538070, guid: e7a02340cd6135f44b130ea583ccae8f,
+    type: 3}
   fireRate: 10
   shootsRaycasts: 1
   raycastDamage: 200

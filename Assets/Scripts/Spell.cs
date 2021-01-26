@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class Spell : MonoBehaviour {
 
 	public float speed = 10f;
 	public int damage = 20;
@@ -86,7 +86,7 @@ public class Bullet : MonoBehaviour {
 					enemy.TakeDamage(damage);
 				}
 
-				Bullet bullet = t.GetComponent<Bullet>();
+				Spell bullet = t.GetComponent<Spell>();
 				if (bullet != null && bullet != this)
 				{
 					bullet.Remove();

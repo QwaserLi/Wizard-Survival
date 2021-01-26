@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
 public class Weapon : ScriptableObject {
 
-	public GameObject bulletPrefab;
+	public GameObject spellPrefab;
 	public float fireRate;
 
 	public bool shootsRaycasts = false;
@@ -13,9 +13,9 @@ public class Weapon : ScriptableObject {
 
 	public void Shoot (Transform firePoint)
 	{
-		GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-		bullet.transform.localScale *= Progression.Growth;
-		Destroy(bullet, 10f);
+		GameObject spell = Instantiate(spellPrefab, firePoint.position, firePoint.rotation);
+		spell.transform.localScale *= Progression.Growth;
+		Destroy(spell, 10f);
 	}
 
 }

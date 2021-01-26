@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour {
 	public bool isShooter = false;
 	public float strafeSpeed = 1f;
 	public float shootDistance = 5f;
-	public GameObject bulletPrefab;
+	public GameObject spellPrefab;
 	public Transform firePoint;
 	public float fireRate = 1f;
 	private float nextTimeToFire = .5f;
@@ -101,8 +101,8 @@ public class EnemyAI : MonoBehaviour {
 	{
 		if (Time.time >= nextTimeToFire)
 		{
-			GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-			Destroy(bullet, 30f);
+			GameObject spell = Instantiate(spellPrefab, firePoint.position, firePoint.rotation);
+			Destroy(spell, 30f);
 
 			nextTimeToFire = Time.time + 1f / fireRate;
 		}
