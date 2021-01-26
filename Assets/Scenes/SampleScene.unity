@@ -2413,7 +2413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1594554627}
-  currentWeapon: {fileID: 11400000, guid: 10af5a357cd74894f9d87e0e4b2b3d3b, type: 2}
+  leftWeapon: {fileID: 11400000, guid: 10af5a357cd74894f9d87e0e4b2b3d3b, type: 2}
+  rightWeapon: {fileID: 11400000, guid: 52784a13bbd1a9c4f8925b493f69839f, type: 2}
   lr: {fileID: 1037442942}
 --- !u!114 &1834947552
 MonoBehaviour:

@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour {
 
 	public Transform firePoint;
-	public Weapon currentWeapon;
+	public Weapon leftWeapon;
+	public Weapon rightWeapon;
 
 	public LineRenderer lr;
 
@@ -17,20 +18,36 @@ public class PlayerShooting : MonoBehaviour {
 		{
 			if (Time.time >= nextTimeOfFire)
 			{
-				if (currentWeapon.shootsRaycasts)
+				if (leftWeapon.shootsRaycasts)
 				{
-					ShootRaycast();
+					ShootRaycast(leftWeapon);
 				} else
 				{
-					currentWeapon.Shoot(firePoint);
+					leftWeapon.Shoot(firePoint);
 				}
 
-				nextTimeOfFire = Time.time + 1f / currentWeapon.fireRate;
+				nextTimeOfFire = Time.time + 1f / leftWeapon.fireRate;
+			}
+		}
+		if (Input.GetButton("Fire2"))
+		{
+			if (Time.time >= nextTimeOfFire)
+			{
+				if (rightWeapon.shootsRaycasts)
+				{
+					ShootRaycast(rightWeapon);
+				}
+				else
+				{
+					rightWeapon.Shoot(firePoint);
+				}
+
+				nextTimeOfFire = Time.time + 1f / rightWeapon.fireRate;
 			}
 		}
 	}
 
-	void ShootRaycast ()
+	void ShootRaycast (Weapon weapon)
 	{
 		RaycastHit2D[] hits = Physics2D.CircleCastAll(firePoint.position, lr.startWidth, firePoint.up);
 		foreach (RaycastHit2D hit in hits)
@@ -38,7 +55,7 @@ public class PlayerShooting : MonoBehaviour {
 			Enemy enemy = hit.collider.GetComponent<Enemy>();
 			if (enemy != null)
 			{
-				enemy.TakeDamage(currentWeapon.raycastDamage);
+				enemy.TakeDamage(weapon.raycastDamage);
 			}
 		}
 

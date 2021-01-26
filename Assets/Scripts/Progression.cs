@@ -136,7 +136,7 @@ public class Progression : MonoBehaviour {
 		Debug.Log("LEVEL UP!");
 
 		player.health += reward.healthBonus;
-		playerShooting.currentWeapon = reward.weapon;
+		playerShooting.leftWeapon = reward.weapon;
 
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		foreach (GameObject enemy in enemies)
